@@ -1,0 +1,58 @@
+.slider{
+    width:900px;
+     margin: auto;
+     border:1px solid gray;
+     
+  }
+  .sliderImg{
+    width:270px;
+    height:300px
+  }
+  #carouser{
+    width:90%;
+    display:flex;
+    gap:30px;
+    padding: 20px;
+    margin: auto;
+    /* border: 1px solid black; */
+  }
+  #carouser>div>img{
+   width:200px;
+   /* position: relative */
+  }
+  #carouser>div{
+    position: relative;
+  }
+  #carouser>div>button{
+    position: absolute;
+    z-index: 1;
+    top:260px;
+    right:20%;
+    background-color: white;
+    color: blue;
+    border: 0;
+    padding: 10px 20px;
+  }
+   
+  #footer{
+    background-color:  rgb(218,224,230);
+    margin-top: 40px;
+     /* border: 1px solid black; */
+  }
+  .apps{
+    width: 50px;
+  
+  }
+  .roww{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* gap:30px; */
+    
+    
+    padding: 20px; */
+  }
+  .icons{
+    width:40px;
+    height:40px;
+    margin:10px
+  }

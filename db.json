@@ -1,0 +1,18 @@
+{
+   "products":[
+        {
+          "id":1,
+          "title":"womens top",
+          "image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+          "price":123,
+          "category":"women's clothing"
+        },
+        {
+          "id":2,
+          "title":"mens top",
+          "image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+          "price":13,
+          "category":"men's clothing"
+        }
+   ]
+}

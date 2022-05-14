@@ -24,7 +24,7 @@ export default function Product() {
   const[rating, SetRating] = useState("")
 
   useEffect(()=> {
-    axios.get(`http://localhost:8000/${id}`,{
+    axios.get(`https://macbackendraj.herokuapp.com/${id}`,{
       params: {
           _sort: sortorder,
           _order: sortby,

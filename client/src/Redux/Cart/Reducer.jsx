@@ -1,4 +1,4 @@
-import { DATA_LOADING, DATA_SUCCESS, DATA_FAILURE, ADD_CART,DELETE_ITEM_CART } from "./Action"
+import { DATA_LOADING, DATA_SUCCESS, DATA_FAILURE, ADD_CART,DELETE_ITEM_CART, EMPTY_CART } from "./Action"
 
 const initState = {
     loading: false,
@@ -27,6 +27,9 @@ export const cartReducer = (store = initState, { type, payload }) => {
         case DELETE_ITEM_CART:
             const AfterDeleteCart = store.cart.filter((el) => el.id !== payload)
             return { ...store, cart : AfterDeleteCart }; 
+
+            case EMPTY_CART:
+            return { ...store, cart: [] };
 
         default:
             return store;

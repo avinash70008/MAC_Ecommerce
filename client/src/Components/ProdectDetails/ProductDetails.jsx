@@ -20,7 +20,7 @@ export default function ProductDetails() {
 
     useEffect(() => {
 
-        if (id) axios.get(`http://localhost:8000/products/${id}`).then((res) => setData(res.data))
+        if (id) axios.get(`https://macbackendraj.herokuapp.com/products/${id}`).then((res) => setData(res.data))
     }, [])
 
     const handleAddBag = () => {

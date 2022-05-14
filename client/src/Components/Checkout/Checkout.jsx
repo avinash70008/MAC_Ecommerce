@@ -1,22 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Checkout.css"
 import { useDispatch, useSelector } from 'react-redux';
 // import "./CartPage.css";
 import { store } from "../../Redux/Store"
 import { deleteItemCart } from '../../Redux/Cart/Action';
-
-
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
-
+import { dataAdd } from '../../Redux/Shiping/Action';
 
 export default function Checkout() {
+  const dipatch = useDispatch()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const data = useSelector((store) => store.cart.cart)
-
   console.log("cart", data)
 
+  const[name , setName]= useState("");
+  const[mobile, setMobile] = useState("")
+  const[pincode, setPincose] = useState("")
+  const[address, setAddress] = useState("")
+  const[locality, setLocality] = useState("")
+  const[city, setCity] = useState("")
+  const[state, setState] = useState("")
 
   var total = 0;
 
@@ -25,6 +32,21 @@ export default function Checkout() {
   }
   //   const dispatch = useDispatch()
   console.log("total all", total)
+
+  const handleContinue = () => {
+    const data = {
+      name,
+      mobile,
+      pincode,
+      address,
+      locality,
+      city,
+      state
+    }
+    dispatch(dataAdd(data))
+    console.log("datatt" , data)
+    navigate("/payment")
+  }
 
   return (
     <div className='ConatctDetailsMain'>
@@ -39,22 +61,25 @@ export default function Checkout() {
           autoComplete="off"
         >
           <InputLabel htmlFor="standard-adornment-amount">CONTACT DETAILS</InputLabel>
-          <TextField id="outlined-basic" label="Name*" variant="outlined" /><br />
-          <TextField id="outlined-basic" label="Mobile No*" variant="outlined" />
+          <TextField id="outlined-basic" label="Name*" onChange={(e) => setName(e.target.value)} variant="outlined" /><br />
+          <TextField id="outlined-basic" label="Mobile No*" onChange={(e) => setMobile(e.target.value)} variant="outlined" />
 
           <InputLabel htmlFor="standard-adornment-amount">ADDRESS</InputLabel>
-          <TextField id="outlined-basic" label="Pin Code*" variant="outlined" /><br />
-          <TextField id="outlined-basic" label="Address (House No, Building, Street, Area)*" variant="outlined" /><br />
-          <TextField id="outlined-basic" label="Locality / Town*" variant="outlined" /><br />
-          <TextField id="outlined-basic" label="City / District*" variant="outlined" />
-          <TextField id="outlined-basic" label="State*" variant="outlined" />
+          <TextField id="outlined-basic" label="Pin Code*" onChange={(e) => setPincose(e.target.value)} variant="outlined" /><br />
+          <TextField id="outlined-basic" label="Address (House No, Building, Street, Area)*" onChange={(e) => setAddress(e.target.value)} variant="outlined" /><br />
+          <TextField id="outlined-basic" label="Locality / Town*" onChange={(e) => setLocality(e.target.value)} variant="outlined" /><br />
+          <TextField id="outlined-basic" label="City / District*" onChange={(e) => setCity(e.target.value)} variant="outlined" />
+          <TextField id="outlined-basic" label="State*" onChange={(e) => setState(e.target.value)} variant="outlined" />
         </Box>
 
-         
-        <div className='AddAddress'>
-          <div><p>CONTINUE</p></div>
+
+        <div >
+          <div onClick={ handleContinue
+            // () => navigate("/payment")
+            }><button disabled={!name ||!mobile || !pincode || !address || !locality || !city || !state} className='AddAddress' ><b>CONTINUE</b></button></div>
         </div>
       </div>
+
 
       {
         data.length !== 0 ?
@@ -114,7 +139,7 @@ export default function Checkout() {
             </div>
           </div>
           :
-          <div className='EmptyCart'><p>Your Cart is Empty</p></div>
+          <div className='EmptyCart'><p><b>Your Cart is Empty</b></p></div>
       }
     </div>
   )

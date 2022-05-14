@@ -60,11 +60,14 @@
   .logo{
       height: 70px;
       width: 70px;
-      border-radius: 50%;
+       
   }
   .options{
       display: flex;
       justify-content: space-around;
+  }
+  .options:hover{
+    cursor: pointer;
   }
   .thired{
       display: flex;

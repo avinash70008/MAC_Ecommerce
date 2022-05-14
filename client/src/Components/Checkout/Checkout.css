@@ -37,11 +37,11 @@ text-align: start !important;
     font-weight: bolder;
 }
 
-.AddAddress{
+.AddAddress>button{
     margin: auto;
     margin-top: 5%;
     border: 2px solid #20c4ff;
-    background-color: #20c4ff;
+    /* background-color: #20c4ff; */
     color: whitesmoke;
     width: 60%;
     height: 50px;
@@ -49,16 +49,13 @@ text-align: start !important;
     margin-left: 5%;
     /* padding-top: 1%; */
 }
-.AddAddress:hover{
+.AddAddress>button:hover{
      color: #20c4ff;
      background-color: white;
      cursor: pointer;
 }
 
-.AddAddress>div>p{
-    font-weight: bolder;
-    /* font-size: larger; */
-}
+
 
 .ConatctCartData{
     /* border: 2px solid red; */

@@ -14,6 +14,8 @@ import ProductType from './Components/ProductType/ProductType';
 import Product from './Components/Product/Product';
 import ProductDetails from './Components/ProdectDetails/ProductDetails';
 import  Checkout  from './Components/Checkout/Checkout';
+import Payment from './Components/Payment/Payment';
+import Success from './Components/Success/Success';
 
 function App() {
   return (
@@ -79,6 +81,12 @@ function App() {
       
       <Routes>
         <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+      <Routes>
+        <Route path="/payment" element={<Payment />} />
+      </Routes>
+      <Routes>
+        <Route path="/success" element={<Success />} />
       </Routes>
       <Footer />
     </div>

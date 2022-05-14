@@ -11,7 +11,7 @@ export default function ProductType() {
       </div>
 
       <div class="img-link-container-2">
-        <a href="\products"
+        <a href=""
           ><img
             src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2020/7/8/89f1bd9d-3a28-456d-888a-beff717a06f81594222908155-Shirts.jpg"
             alt=""

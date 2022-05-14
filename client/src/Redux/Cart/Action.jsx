@@ -5,7 +5,7 @@ export const DATA_SUCCESS = "DATA_SUCCESS";
 export const DATA_FAILURE = "DATA_FAILURE";
 export const ADD_CART = "ADD_CART";
 export const DELETE_ITEM_CART = "DELETE_ITEM_CART";
- 
+export const EMPTY_CART = "EMPTY_CART";
 
  
 export const dataLoading = () => ({
@@ -31,3 +31,6 @@ export const deleteItemCart = (payload) => ({
     payload
 });
  
+export const emptyCart = () => ({
+    type : EMPTY_CART,
+});
